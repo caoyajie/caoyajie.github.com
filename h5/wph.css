@@ -1,0 +1,220 @@
+body,div,p,ul,li,ol{
+	margin:0;
+	padding:0;
+}
+.clear{clear:both;}
+body{
+	width: 100%;
+}
+.toubu{
+	width: 100%;
+	height:4.5rem;
+	background-color: #eee;
+	text-align: center;
+	line-height: 4.5rem;
+}
+.toubu div{
+	display: inline-block;
+}
+.toubu .zuobian{
+	width: 25%;
+	height: 4.5rem;
+	float: left;
+	line-height: 3rem;
+	text-align: center;
+	margin:0.75rem 1rem;
+}
+.toubu img{
+	display: inline-block;
+	width: 3rem;
+	height: 3rem;
+}
+.toubu .wph{
+	font-size:2rem;
+	color: red;
+ }
+ .toubu .jiantou{
+ 	transform: rotateZ(90deg);
+ }
+ .daohanglan{
+ 	width: 100%;
+ 	height: 3.5rem;
+ 	background-color: #555;
+ }
+ .daohanglan ul{
+ 	width: 100%;
+ 	height: 3.5rem;
+ 	padding: 0.5rem 0;
+ 	box-sizing: border-box;
+ }
+ .daohanglan li{
+ 	list-style: none;
+ 	float: left;
+ 	text-align: center;
+ 	line-height: 2.5rem;
+ 	border-right: 0.5px solid #fff;
+ 	box-sizing: border-box;
+ }
+  .daohanglan a{
+  	text-decoration: none;
+  	color: #fff;
+  	font-size: 1.2rem;
+  	display: inline-block;
+  }
+  .daohanglan span{
+  	display: inline-block;
+  }
+  .daohanglan .shouye{
+  	width: 6.1rem;
+  	height: 2.5rem;
+  }
+  .daohanglan .fushi{
+  	width: 8rem;
+  	height: 2.5rem;
+  }
+  .daohanglan .meizhuang{
+  	width: 5.6rem;
+  	height: 2.5rem;
+  }
+ .daohanglan .muying{
+ 	border-right: none;
+ }
+  .daohanglan .shouye a{
+  	width: 6.1rem;
+  	height: 2.5rem;
+  }
+  .daohanglan .fushi a{
+  	width: 8rem;
+  	height: 2.5rem;
+  }
+  .daohanglan .meizhuang a{
+  	width: 5.6rem;
+  	height: 2.5rem;
+  } 	
+.daohanglan .shouye span{
+	width:2.8rem;
+	height: 2rem;
+	border-bottom: 1.5px solid red;
+}
+.huadongguanggao{
+	width: 100%;
+	height: 11rem;
+}
+.huadongguanggao div{
+	display: inline-block;
+	position:absolute；
+	bottom:10px;
+}
+.huadongguanggao img{
+	width: 100%;
+	height: 11rem;
+}
+.huadongguanggao .wugeyuan span{
+	display: inline-block;
+	width: 0.8rem;
+	height: 0.8rem;
+	border:1px solid #eee;
+	border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

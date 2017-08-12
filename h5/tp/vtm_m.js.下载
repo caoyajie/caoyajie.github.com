@@ -1,0 +1,89 @@
+VTM = window.VTM||{};
+VTM.protocol = (("https:" == document.location.protocol) ? "https://" : "http://");
+/** ------ VTM事件发布、订阅组件 ------**/
+VTM.event = {
+    handers: {},
+    messageList: [],
+    listen: function(key, callbackFunc) {
+        if(!this.handers[key]) {
+            this.handers[key] = [];
+        }
+        this.handers[key].push(callbackFunc);
+
+        var callbackFuncs = [];
+        for(var i = 0; i < this.messageList.length; ++i) {
+            var msg = this.messageList[i];
+            if(msg.key == key) {
+                callbackFuncs = this.handers[msg.key];
+                break;
+            }
+        }
+        for (var j = 0, func; j < callbackFuncs.length, func = callbackFuncs[j++];) {
+            if(callbackFunc == func) {
+                func.apply(this, msg.data);
+            }
+        }
+    },
+    trigger: function(){
+        var key = Array.prototype.shift.call(arguments);
+        var callbackFuncs = this.handers[key];
+
+        var isExists = false;
+        for(var i = 0; i < this.messageList.length; ++i) {
+            if(key == this.messageList[i].key) {
+                isExists = true;
+                break;
+            }
+        }
+
+        if(!isExists) {
+            this.messageList.push({key: key, data: arguments});
+        }
+
+        if (!callbackFuncs) return;
+
+        for (var j = 0, func; j < callbackFuncs.length, func = callbackFuncs[j++];) {
+            func.apply(this, arguments);
+        }
+    },
+    remove: function(key) {
+        for(var i = 0; i < this.messageList.length; ++i) {
+            if(key == this.messageList[i].key) {
+                this.messageList.splice(i,1);
+            }
+        }
+        for(var _key in this.handers) {
+            if(key == _key) {
+                delete this.handers[key];
+            }
+        }
+    }
+};
+
+function other_loadjs(url) {
+	var script = document.createElement('script');
+	script.type = 'text/javascript'; script.async = true;
+	script.src = VTM.protocol+url.replace('http:\/\/','');
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(script, s);
+}
+
+/** ------ 执行第三方统计代码 ------**/
+
+function startDsp(){
+    }
+function startNotDsp(){
+    }
+function startVtm(){
+    startDsp();
+    startNotDsp();
+}
+
+/**Waiting VTM loaded**/
+VTM.event.listen('VTMComplete', function() {
+    startVtm();
+});
+
+VTM.event && VTM.event.trigger('vtm.loader');
+
+
